@@ -7,13 +7,13 @@ output: pdf_document
 
 # Introduction
 
-R is a statistical computing language and RStudio is a Graphical User Interface for using R. This assignment will introduce you to the basic of using R, which will be important for later in the semester when we use R to do econometric analyses.
+R is a statistical computing language and RStudio is a Graphical User Interface for using R. This assignment will introduce you to the basics of using R, which will be important for later in the semester when we use R to do econometric analyses.
 
 ## Using RMarkdown
 
 This file is an RMarkdown file (file extension .rmd), as opposed to an R file (file extension .R). An R file would contain only code and, when run in its entirety, would execute that code. An RMarkdown file is a mix of code and "markdown," i.e. text. When an RMarkdown file is run in its entirety, the file executes the code "chunks" within the file and then collates them with the text to produce a pdf document. RMarkdown is ideal for social scientists because it allows you to manipulate data, analyze it, report results, generate figures, and write your report all within the same file. We will be using RMarkdown throughout the course to do assignments. 
 
-Coding in RMarkdown takes place within code "chunks." These chunks have options which affect how they appear in the final pdf. The below code chunk prints the text "Hello World!" A chunk is defined by coding between two sets of three left apostrophes (the button right under the Escape key on most keyboards). Right next to the top set of these apostrophes, the name and options for the chunk are defined. For the below chunk this is "\{r helloworld, include = TRUE\}"-- the "r" says that we are coding using the language R (there are a few other options which we will not be using), the "helloworld" is the name of the chunk (this part can be skipped if desired), and the "include = TRUE" is a chunk option. The "include" option being TRUE tells the RMarkdown file to include both the code chunk itself and its output in the pdf. Setting "include = FALSE" would prevent either from being included---you may want to set "include = FALSE" when writing reports for chunks that only clean the data. Include is set to TRUE by default, it is only included as an option here for demonstration purposes. To include the chunk output but not the code itself (for example, when you have code that generates a figure), you can set "echo = FALSE" instead.
+Coding in RMarkdown takes place within code "chunks." These chunks have options which affect how they appear in the final pdf. The below code chunk prints the text "Hello World!" A chunk is defined by coding between two sets of three left apostrophes (the button right under the Escape key on most keyboards). Right next to the top set of these apostrophes, the name and options for the chunk are defined. For the below chunk this is `{r helloworld, include = TRUE}`-- the "r" says that we are coding using the language R (there are a few other options which we will not be using), the "helloworld" is the name of the chunk (this part can be skipped if desired), and the "include = TRUE" is a chunk option. The "include" option being TRUE tells the RMarkdown file to include both the code chunk itself and its output in the pdf. Setting "include = FALSE" would prevent either from being included; you may want to set "include = FALSE" when writing reports for chunks that only clean the data. Include is set to TRUE by default, it is only included as an option here for demonstration purposes. To include the chunk output but not the code itself (for example, when you have code that generates a figure), you can set "echo = FALSE" instead.
 
 ```{r helloworld, include = TRUE}
 print("Hello World!")
@@ -25,7 +25,7 @@ When you are finished and want to create your pdf, you click "Knit" in the RStud
 
 ## R Basics
 
-R is an object-oriented programming language, which means that it stores information within objects that can then be manipulated by later code. Each object has a class which determines what operations can be done on it. The class of an object $a$ can be determined by running the code `class(a)`. This is something you probably want to do in the console (the box below where this text is written in the RStudio interface). 
+R is an object-oriented programming language, which means that it stores information within objects that can then be manipulated by later code. Each object has a class which determines what operations can be done on it. The class of an object `a` can be determined by running the code `class(a)`. This is something you probably want to do in the console (the box below where this text is written in the RStudio interface). 
 
 Let's create our first object: a numeric vector with the first few prime numbers.
 
@@ -39,7 +39,7 @@ Let's create our first object: a numeric vector with the first few prime numbers
 first5primes <- c(2, 3, 5, 7, 11)
 ```
 
-When you run this code chunk (which you can do by clicking the green play button that appears at the top right of the chunk), R will create the `first5primes` object. In the box at the top right of the RStudio interfact (labeled "Environment") you will see `first5primes` listed. Try typing `class(first5primes)` into the console, you should see the result "numeric." Next, try copy and pasting each of the following lines into the console to see how they work.
+When you run this code chunk (which you can do by clicking the green play button that appears at the top right of the chunk), R will create the `first5primes` object. In the box at the top right of the RStudio interface (labeled "Environment") you will see `first5primes` listed. Try typing `class(first5primes)` into the console, you should see the result "numeric." Next, try copy and pasting each of the following lines into the console to see how they work.
 
 ```{r basicoperations}
 # Subsetting is done with square brackets, note that unlike many other coding
@@ -145,7 +145,7 @@ isFirstLetterVowel <- function(word){
 isFirstLetterVowel("alphabet")
 ```
 
-In the last part of the previous chunk, I wrote a function called `isFirstLetterVowel` which takes characters as an input and returns TRUE or FALSE depending on whether the first letter is a vowel. Note that the first part of the function is a test to make sure the input is actually a character (try running `isFirstLetterVowel(5)`!)---including tests like this is a good way to debug functions. I then create a new object `firstletter` using the function `substr`. If you want to know what to know what `substr` does, you should type `?substr` into the console. Note that `firstletter` does not show up in the Environment section on the right of RStudio---this is because this object is created only in the function environment. This means we won't be able to use the object `firstletter` anywhere other than within the function `isFirstLetterVowel`. (There are ways to get `firstletter` to show up in the Global Environment, but usually this is a nice feature because it leave the Global Environment clean.)
+In the last part of the previous chunk, I wrote a function called `isFirstLetterVowel` which takes characters as an input and returns TRUE or FALSE depending on whether the first letter is a vowel. Note that the first part of the function is a test to make sure the input is actually a character (try running `isFirstLetterVowel(5)` to see how the code handles this). Including tests like this is a good way to debug functions. I then create a new object `firstletter` using the function `substr`. If you want to know what to know what `substr` does, you should type `?substr` into the console. Note that `firstletter` does not show up in the Environment section on the right of RStudio---this is because this object is created only in the function environment. This means we won't be able to use the object `firstletter` anywhere other than within the function `isFirstLetterVowel`. (There are ways to get `firstletter` to show up in the Global Environment, but usually this is a nice feature because it leave the Global Environment clean.)
 
 Finally, it is worth knowing about for and while loops. These can be used to do repetitive tasks automatically. Say that we don't just want to know whether the first letter of a word is a vowel, we want to know if *every* letter is a vowel. We could do that with this code.
 
@@ -163,9 +163,9 @@ letterVowels <- function(word){
 }
 letterVowels("alphabet")
 ```
-A for loop, like the one shown above iterates over a vector or list. In the code above, it iterates over the list of integers starting at 1 and ending at the length of the word, `nchar(word)`. When $i=1$, it looks at the first letter of the word, tests whether it is a vowel, and adds the result to the $ith$ place in the result vector.
+A for loop like the one shown above iterates over a vector or list. In the code above, it iterates over the list of integers starting at 1 and ending at the length of the word, `nchar(word)`. When $i=1$, it looks at the first letter of the word, tests whether it is a vowel, and adds the result to the $i$th place in the result vector.
 
-A while loop instead looks like `while(claim){code}`. So long as the claim is true, the code will keep running. For example, setting `a <- 5` and then running `while(a<10){a <- a+1}` would eventually stop when `a==10$`. Be careful using while loops---if their claim never evaluated to TRUE, they will never stop running.
+A while loop instead looks like `while(claim){code}`. So long as the claim is true, the code will keep running. For example, setting `a <- 5` and then running `while(a<10){a <- a+1}` would eventually stop when `a==10`. Be careful using while loops---if their claim never evaluates to TRUE, they will never stop running.
 
 Even the best coders in the world generally cannot code blindfolded---coding involves constantly looking up functions and googling to problem solve. Some of the problems below will require functions that I have not told you about yet, but everything is possible without downloading any libraries (something we will discuss later). Use Google and problem solving to figure out how to do them!
 
