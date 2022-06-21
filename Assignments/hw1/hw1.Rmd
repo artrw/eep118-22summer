@@ -1,0 +1,12 @@
+---
+title: "Homework 1: Simple Linear Regression"
+author: "STUDENT NAME"
+date: "DUE DATE"
+output: pdf_document
+---
+
+# Problem 1
+
+Prove that $\mathbb{E}(\hat{\beta_1})=\beta_1$.
+
+
