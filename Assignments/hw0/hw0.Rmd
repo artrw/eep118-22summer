@@ -1,7 +1,7 @@
 ---
 title: "Homework 0: Introduction to R and RStudio"
 author: "STUDENT NAME"
-date: "DUE DATE"
+date: "Due 6/23 11:59pm"
 output: pdf_document
 ---
 
