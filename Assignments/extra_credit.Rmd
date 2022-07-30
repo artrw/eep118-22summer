@@ -1,0 +1,48 @@
+---
+title: \bf Extra Credit Opportunity
+author: 
+institute: 
+output: 
+  bookdown::pdf_document2:
+    toc: false
+    number_sections: false
+urlcolor: blue
+fontsize: 12pt
+header-includes: |
+  \usepackage[longnamesfirst]{natbib}
+  \usepackage{amsmath}
+  \usepackage{amsfonts}
+  \usepackage{rotating}
+  \usepackage{setspace}\doublespacing
+  \usepackage{floatrow}
+   \floatsetup[figure]{capposition=top}
+
+---
+
+# Instructions
+
+Mass media regularly covers poorly-conducted statistical analyses. Often this coverage applies a causal interpretation to results that do not satisfy or even attempt to justify satisfaction of the zero conditional mean assumption. 
+
+To prepare for the extra credit opportunity, you will need to:
+
+1. Identify an article in a media publication (i.e. article in on an online news site) that covers a statistical result
+
+2. Find the original research that the media coverage is based on 
+
+3. Read both articles
+
+Once you have done this, write a short report (1-3 pages) that answers the following questions:
+
+1. What claim is made by the original scientific article? Is this the same as the claim reported in the media article?
+
+2. Is the scientific article convincing? Why or why not? (Is the zero conditional mean assumption plausible? How did the authors justify it?)
+
+3. How could the scientific article be improved? Is there a more appropriate research design for the question they asked?
+
+A satisfactory submission will add 1\% to your final grade. You can take advantage of this opportunity up to three times, for a total 3\% addition to your grade if scoring perfectly each time.
+
+Submissions should be e-mailed to me (\url{arw@berkeley.edu}) with the e-mail title "118 Extra Credit Submission."
+
+
+
+ 
